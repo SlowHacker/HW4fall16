@@ -9,6 +9,7 @@
   %body
     %h1.title Rotten Potatoes!
     -if @current_user
+      #login_status.message= "You are logged in as #{@current_user.user_id}"
       = button_to "Logout", logout_path, :id => "logout", :method => "delete"
     -else
       = button_to "Sign up/Login", login_path, :id => "signuplogin", :method => "get"

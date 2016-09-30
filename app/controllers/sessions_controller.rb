@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
             session[:session_token] = @user.first.session_token
             redirect_to movies_path
         else
-            flash[:notice] = "Invalid user-id/e-mail combination. Please try again."
+            flash[:warning] = "Invalid user-id/e-mail combination. Please try again."
             redirect_to login_path
         end
     end
